@@ -19,12 +19,22 @@ AGENT_SEED = os.getenv("TRADFI_AGENT_SEED", os.getenv("AGENT_SEED"))
 if not AGENT_SEED:
     raise ValueError("エラー: 環境変数 'TRADFI_AGENT_SEED' または 'AGENT_SEED' が設定されていません。")
 
-# Agentの定義（シードや秘密鍵はログに一切出力されません）
+# Agentの定義
 agent = Agent(
-    name="tradfi_stock_agent",
+    name="global_stock_intell_agent",  # 名前を合わせる場合
     port=8004,
     endpoint=["http://127.0.0.1:8004/submit"]
 )
+
+# Startupハンドラーの表示用ログ
+@agent.on_event("startup")
+async def startup_handler(ctx: Context):
+    ctx.logger.info("==================================================")
+    ctx.logger.info(f"📈 Global Stock Intelligence Agent (Ver {CURRENT_VERSION})")
+    ctx.logger.info(f"📍 Address: {agent.address}")
+    ctx.logger.info("🔐 Security Status: Agent Seed loaded securely (Hidden from logs)")
+    ctx.logger.info("🏷️ Handle Suggestion: @prime-stock-oracle")
+    ctx.logger.info("==================================================")
 
 # --------------------------------------------------
 # 📊 データ構造定義 (Protocols & Models)
