@@ -1,4 +1,4 @@
-# 📈 TradFi & Global Stock Market Agent (`@prime-tradfi-oracle`)
+# 📈 Global Stock Intelligence Agent (`@prime-stock-oracle`)
 
 > **Institutional-Grade Global Stock Indices, Sovereign Yields & Macro Liquidity Intelligence Sub-Agent**
 
@@ -7,14 +7,7 @@
 
 ## 📌 Overview
 
-**TradFi & Global Stock Market Agent** is a specialized autonomous AI sub-agent built on Fetch.ai's `uAgents` framework. It provides real-time equity market metrics, treasury yield curve dynamics, macro fiat liquidity data, and market sentiment indicators to master orchestrators such as **World Money Map Orchestrator (`@prime-money-oracle`)**.
-
-### Tracked Market Domains:
-1. **Global Equity Indices**: S&P 500, Nasdaq 100, Dow Jones, Nikkei 225, DAX 40, FTSE 100, CSI 300.
-2. **Sovereign Debt & Yield Curves**: US 10-Year, 2-Year, 3-Month Yields, 10Y-2Y Spread Inversion, Fed Funds Rate.
-3. **Macro Fiat Liquidity**: US Dollar Index (DXY), Fed Balance Sheet (QT/QE), US M2 Money Supply, Reverse Repo (RRP).
-4. **Volatility & Sentiment**: CBOE VIX (Equity Risk), ICE MOVE Index (Treasury Risk), CNN Fear & Greed Index, High Yield Credit Spreads.
-5. **Sector Rotation**: Institutional flows across AI/Tech, Energy, Financials, and Defensive vs. Cyclical sectors.
+**Global Stock Intelligence Agent** is a specialized autonomous AI sub-agent built on Fetch.ai's `uAgents` framework. It provides real-time equity market metrics, treasury yield curve dynamics, macro fiat liquidity data, and market sentiment indicators to master orchestrators such as **World Money Map Orchestrator (`@prime-money-oracle`)**.
 
 ---
 
