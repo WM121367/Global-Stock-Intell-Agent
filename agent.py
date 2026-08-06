@@ -1,5 +1,5 @@
 # ==================================================
-# 📈 TradFi & Global Stock Market Agent (Ver 1.0.0)
+# 📈 Global Stock Intelligence Agent (Ver 1.0.0)
 # ==================================================
 # このAgentはグローバル株式市場、債券金利、ドルインデックス(DXY)、
 # マクロ流動性（FRBバランスシート/M2）、VIXボラティリティ等の市場データを収集・推論し、
@@ -21,20 +21,10 @@ if not AGENT_SEED:
 
 # Agentの定義
 agent = Agent(
-    name="global_stock_intell_agent",  # 名前を合わせる場合
+    name="global_stock_intell_agent",
     port=8004,
     endpoint=["http://127.0.0.1:8004/submit"]
 )
-
-# Startupハンドラーの表示用ログ
-@agent.on_event("startup")
-async def startup_handler(ctx: Context):
-    ctx.logger.info("==================================================")
-    ctx.logger.info(f"📈 Global Stock Intelligence Agent (Ver {CURRENT_VERSION})")
-    ctx.logger.info(f"📍 Address: {agent.address}")
-    ctx.logger.info("🔐 Security Status: Agent Seed loaded securely (Hidden from logs)")
-    ctx.logger.info("🏷️ Handle Suggestion: @prime-stock-oracle")
-    ctx.logger.info("==================================================")
 
 # --------------------------------------------------
 # 📊 データ構造定義 (Protocols & Models)
@@ -65,7 +55,7 @@ chat_proto = Protocol(name="TradFi Agent Chat Protocol", version="1.0.0")
 async def handle_chat_message(ctx: Context, sender: str, msg: ChatMessage):
     ctx.logger.info(f"💬 [Chat Received from {sender}]: {msg.message}")
     reply_text = (
-        f"📈 TradFi & Global Stock Market Agent (Ver {CURRENT_VERSION}) [@prime-tradfi-oracle] です！\n"
+        f"📈 Global Stock Intelligence Agent (Ver {CURRENT_VERSION}) [@prime-stock-oracle] です！\n"
         f"主要国株価指数、米金利/イールドカーブ、DXY、FRBバランスシート、VIX/MOVE指標をリアルタイム監視中。\n"
         f"照会は TradFiDataQueryRequest プロトコルをご利用ください。"
     )
@@ -156,10 +146,10 @@ async def handle_tradfi_query(ctx: Context, sender: str, msg: TradFiDataQueryReq
 @agent.on_event("startup")
 async def startup_handler(ctx: Context):
     ctx.logger.info("==================================================")
-    ctx.logger.info(f"📈 TradFi & Global Stock Market Agent (Ver {CURRENT_VERSION})")
+    ctx.logger.info(f"📈 Global Stock Intelligence Agent (Ver {CURRENT_VERSION})")
     ctx.logger.info(f"📍 Address: {agent.address}")
     ctx.logger.info("🔐 Security Status: Agent Seed loaded securely (Hidden from logs)")
-    ctx.logger.info("🏷️ Handle Suggestion: @prime-tradfi-oracle")
+    ctx.logger.info("🏷️ Handle Suggestion: @prime-stock-oracle")
     ctx.logger.info("==================================================")
 
 if __name__ == "__main__":
