@@ -73,3 +73,7 @@ Response Schema (TradFiDataQueryResponse)
   },
   "reasoning_summary": "TradFi intelligence compiled..."
 }
+```
+⚖️ Disclaimer
+NOT FINANCIAL ADVICE. This software is generated automatically for informational, research, and analytical purposes only. It does not constitute investment, legal, or tax advice.
+```
