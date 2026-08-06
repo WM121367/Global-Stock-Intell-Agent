@@ -1,4 +1,4 @@
-# 📈 Global Stock Intelligence Agent (`@prime-stock-oracle`)
+# 📈 Global-Stock-Intell-Agent (`@prime-stock-oracle`)
 
 > **Institutional-Grade Global Stock Indices, Sovereign Yields & Macro Liquidity Intelligence Sub-Agent**
 
@@ -7,7 +7,7 @@
 
 ## 📌 Overview
 
-**Global Stock Intelligence Agent** is a specialized autonomous AI sub-agent built on Fetch.ai's `uAgents` framework. It provides real-time equity market metrics, treasury yield curve dynamics, macro fiat liquidity data, and market sentiment indicators to master orchestrators such as **World Money Map Orchestrator (`@prime-money-oracle`)**.
+**Global-Stock-Intell-Agent** is a specialized autonomous AI sub-agent built on Fetch.ai's `uAgents` framework. It provides real-time equity market metrics, treasury yield curve dynamics, macro fiat liquidity data, and market sentiment indicators to master orchestrators such as **World Money Map Orchestrator (`@prime-money-oracle`)**.
 
 ---
 
