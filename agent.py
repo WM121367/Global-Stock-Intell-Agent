@@ -1,21 +1,20 @@
 # ==================================================
-# 📈 Global Stock Intelligence Agent (Ver 1.1.0 - Live Yahoo API)
+# 📈 Global Stock Intelligence Agent (Cloud Ver 1.1.0 - Live Yahoo API)
 # ==================================================
 import os
 import time
 import requests
 from uagents import Agent, Context, Model, Protocol
 
-CURRENT_VERSION = "1.1.0"
+CURRENT_VERSION = "1.1.0-cloud"
 
-AGENT_SEED = os.getenv("TRADFI_AGENT_SEED", os.getenv("AGENT_SEED"))
-if not AGENT_SEED:
-    raise ValueError("エラー: 環境変数 'TRADFI_AGENT_SEED' または 'AGENT_SEED' が設定されていません。")
+# Agentverse Secrets から AGENT_SEED を取得
+AGENT_SEED = os.getenv("AGENT_SEED")
 
+# クラウドホスティング用 Agent 初期化 (port/endpoint は Agentverse が自動制御)
 agent = Agent(
-    name="global_stock_intell_agent",
-    port=8004,
-    endpoint=["http://127.0.0.1:8004/submit"]
+    name="global-stock-intell-agent",
+    seed=AGENT_SEED
 )
 
 # --------------------------------------------------
@@ -63,7 +62,7 @@ def fetch_yahoo_ticker_price(symbol: str, fallback_val: float) -> tuple[float, f
             prev_close = result["meta"].get("chartPreviousClose", price)
             change_percent = round(((price - prev_close) / prev_close) * 100, 2) if prev_close else 0.0
             return round(price, 2), change_percent
-    except Exception as e:
+    except Exception:
         pass
     return fallback_val, 0.0
 
@@ -151,20 +150,8 @@ async def startup_handler(ctx: Context):
     ctx.logger.info("🌐 Live Yahoo Finance API Integration Active")
     ctx.logger.info("==================================================")
 
+# --------------------------------------------------
+# 🏁 エントリーポイント
+# --------------------------------------------------
 if __name__ == "__main__":
-    import os
-    from uagents_core.utils.registration import (
-        register_chat_agent,
-        RegistrationRequestCredentials,
-    )
-
-    register_chat_agent(
-        "subagent_tradfi_local",
-        "https://agentverse.ai",
-        active=True,
-        credentials=RegistrationRequestCredentials(
-            agentverse_api_key=os.environ["AGENTVERSE_KEY"],
-            agent_seed_phrase=os.environ["AGENT_SEED_PHRASE"],
-        ),
-    )
     agent.run()
