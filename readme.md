@@ -2,7 +2,7 @@
 
 > **Institutional-Grade Global Stock Indices, Sovereign Yields & Macro Liquidity Intelligence Sub-Agent**
 
-[![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](https://github.com/your-org/tradfi-stock-agent)
+[![Version](https://img.shields.io/badge/Version-1.1.0_Cloud-blue.svg)](https://github.com/your-org/tradfi-stock-agent)
 [![Framework](https://img.shields.io/badge/Framework-Fetch.ai%20uAgents-orange.svg)](https://fetch.ai/)
 
 ## 📌 Overview
