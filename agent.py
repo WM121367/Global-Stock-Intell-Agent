@@ -15,7 +15,6 @@ WMMO_ADDR = os.getenv("WMMO_ADDR")
 # 2. Agent初期化
 agent = Agent(
     name="global-stock-intell-agent",
-    seed=AGENT_SEED
 )
 
 # --------------------------------------------------
